@@ -127,8 +127,11 @@ void makeMarkerMsgs(int type, int id, Pose &p, sensor_msgs::ImageConstPtr image_
   tf::Transform markerPose = t * m;
   tf::Transform m1 (qaut, markerOrigin);
   
-    tf::Vector3 usvOrigin (-0.966, 2.016, 2.035);
-    tf::Quaternion usvqaut(-0.077, 0.865, -0.496, -0.003);
+//output of tf_echo ar_marler_0 head_cam
+    tf::Vector3 usvOrigin (3.165, -8.220, 1.900);
+    tf::Quaternion usvqaut(-0.812, -0.265, 0.121, 0.506);
+
+
     tf::Transform ar_usv (usvqaut, usvOrigin);
   //Publish the cam to marker transform for main marker in each bundle
   if(type==MAIN_MARKER){
@@ -361,7 +364,7 @@ covar.push_back(temp);
   ros::spinOnce();			
 	 
   //Subscribe to topics and set up callbacks
-  ROS_INFO ("Subscribing to image topic");
+  ROS_INFO ("Subscribing to image topic..starting alvar ros spin");
   image_transport::ImageTransport it_(n);
   cam_sub_ = it_.subscribe (cam_image_topic, 1, &getCapCallback);
 
