@@ -3,5 +3,7 @@ Package maintained by Scott Niekum
 sniekum@willowgarage.com
 sniekum@cs.umass.edu
 
+Modified:
+alvar branch used for indoor tracking of the surface vehicle. Custom modifications to the bundle tracking to making the tracking faster when using only one cube bundle
 
 
